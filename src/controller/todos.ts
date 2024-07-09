@@ -9,7 +9,7 @@ export function getTodo(req: Request, res: Response) {
 export function getTodoById(req: Request, res: Response) {
      const { id } = req.params;
      const data = TodosService.getTodoById(id);
-     res.json({ data });
+     res.json(data);
 }
 
 export function createTodos(req: Request, res: Response) {
