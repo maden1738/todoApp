@@ -20,14 +20,14 @@ export function createTodos(todo: Todo) {
      return TodosModel.createTodos(todo);
 }
 
-export function updateTodo(id: string, todo: Todo) {
+export function updateTodo(id: string, body: Todo) {
      const data = TodosModel.getTodoById(id);
      if (!data) {
           return {
                error: `Todo with id: ${id} not found`,
           };
      }
-     return TodosModel.updateTodo(id, todo);
+     return TodosModel.updateTodo(id, body);
 }
 
 export function deleteTodo(id: string) {

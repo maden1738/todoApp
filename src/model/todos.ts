@@ -29,15 +29,19 @@ export function createTodos(todo: Todo) {
      return newTodo;
 }
 
-export function updateTodo(id: string, todo: Todo) {
+export function updateTodo(id: string, { todo, status, dueDate }: Todo) {
      let updatedValue;
      todos = todos.map((todoElement) => {
           if (todoElement.id !== id) {
                return todoElement;
           }
-          todoElement.todo = todo.todo;
-          updatedValue = todoElement;
-          return todoElement;
+
+          return (updatedValue = {
+               ...todoElement,
+               todo,
+               status,
+               dueDate,
+          });
      });
      return updatedValue;
 }
